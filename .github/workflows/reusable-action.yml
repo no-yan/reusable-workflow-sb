@@ -1,0 +1,26 @@
+name: Composite Action Template
+
+on:
+  workflow_call:
+    inputs:
+      who-to-greet:
+        type: string
+        required: true
+        default: World
+    secrets:
+      envPAT:
+        required: true
+
+jobs:
+  hoge:
+    runs-on: ubuntu-latest
+    steps:
+      - id: greet
+        run: |
+          GREET="Hello ${WHO}"
+          echo "${GREET}"
+          echo "${GREET}" > greet.txt
+          echo "word=${GREET}" >> $GITHUB_OUTPUT
+        shell: bash
+        env:
+          WHO: ${{ inputs.who-to-greet }}
