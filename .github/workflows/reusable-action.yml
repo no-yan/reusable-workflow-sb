@@ -6,10 +6,6 @@ on:
       who-to-greet:
         type: string
         required: true
-        default: World
-    secrets:
-      envPAT:
-        required: true
 
 jobs:
   hoge:

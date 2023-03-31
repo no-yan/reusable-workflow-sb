@@ -8,8 +8,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  hoge:
-    uses: ./.github/workflows/reusable-action.yml
+  reuse:
+    uses: ./.github/workflows/reusable-action.yml@main
     with:
       who-to-greet: "Tom"
     secrets: inherit
+
+  label:
+    uses: ./.github/workflows/reusable-another-action.yml@main
