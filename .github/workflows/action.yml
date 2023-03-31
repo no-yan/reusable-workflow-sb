@@ -9,10 +9,12 @@ on:
 
 jobs:
   reuse:
-    uses: ./.github/workflows/reusable-action.yml@main
+    uses: ./.github/workflows/reusable-action.yml
     with:
       who-to-greet: "Tom"
     secrets: inherit
 
   label:
-    uses: ./.github/workflows/reusable-another-action.yml@main
+    uses: ./.github/workflows/reusable-another-action.yml
+    with:
+      config-path: ~
